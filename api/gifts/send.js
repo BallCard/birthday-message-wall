@@ -55,12 +55,10 @@ async function handleSendGift(req, res) {
   gifts.push(giftId);
 
   // Write back the updated message
-  await kv.set(`msg:${messageId}`, { ...message, gifts });
+  const updatedMessage = { ...message, gifts };
+  await kv.set(`msg:${messageId}`, updatedMessage);
 
-  return success(res, {
-    messageId,
-    gifts,
-  });
+  return success(res, updatedMessage);
 }
 
 export default async function handler(req, res) {

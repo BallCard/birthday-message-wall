@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(gh repo:*)",
+      "Bash(git clone:*)",
+      "Bash(cp:*)",
+      "Bash(rm -rf backend frontend start-dev.ps1 package-lock.json .gitignore)",
+      "Bash(mkdir -p api/_lib src/components src/stores src/api src/assets public docs)",
+      "Bash(cd:*)",
+      "Bash(cp -r /tmp/birthday-message-wall/src .)",
+      "Bash(cp /tmp/birthday-message-wall/index.html .)",
+      "Bash(cp /tmp/birthday-message-wall/tsconfig.json .)",
+      "Bash(cp /tmp/birthday-message-wall/vite.config.ts .)",
+      "Bash(cp /tmp/birthday-message-wall/metadata.json .)",
+      "Bash(rm -f .gitignore)",
+      "Bash(echo \"node_modules/:*)"
+    ]
+  }
+}

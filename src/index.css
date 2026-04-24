@@ -1,0 +1,130 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #d4a373;
+  --color-secondary: #faedcd;
+  --color-accent: #ccd5ae;
+  --color-background-warm: #fefae0;
+  --color-card-bg: #ffffff;
+  --color-text-main: #283618;
+  --color-text-muted: #606c38;
+}
+
+:root {
+  --primary-color: #d4a373;
+  --secondary-color: #faedcd;
+  --background-warm: #fefae0;
+  --card-bg: #ffffff;
+  --text-main: #283618;
+  --text-muted: #606c38;
+  --border-radius: 24px;
+  --shadow-sm: 0 4px 12px rgba(40, 54, 24, 0.02);
+  --shadow-md: 0 20px 40px rgba(40, 54, 24, 0.04);
+  --glass: rgba(255, 255, 255, 0.3);
+  --font-display: 'Space Grotesk', sans-serif;
+  --font-serif: 'Instrument Serif', serif;
+  --font-sans: 'Inter', sans-serif;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@300;400;600;700&family=Instrument+Serif:ital,wght@0,400;1,400&family=Playfair+Display:italic,wght@0,700;1,700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--background-warm);
+  color: var(--text-main);
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Base Layout Structure */
+#root {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Modern Noise Texture Overlay */
+.noise-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 99;
+  pointer-events: none;
+  opacity: 0.05;
+  background-image: url("https://www.transparenttextures.com/patterns/pinstriped-suit.png");
+}
+
+/* Animated Background Blobs */
+.bg-blob {
+  position: fixed;
+  width: 70vw;
+  height: 70vw;
+  border-radius: 50%;
+  filter: blur(140px);
+  z-index: -1;
+  mix-blend-mode: multiply;
+}
+
+.bg-blob-1 {
+  background: var(--primary-color);
+  top: -10%;
+  right: -10%;
+}
+
+.bg-blob-2 {
+  background: var(--accent);
+  bottom: -10%;
+  left: -10%;
+  animation-delay: -5s;
+}
+
+@keyframes move-blobs {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(10vw, 5vh) scale(1.1); }
+  100% { transform: translate(-5vw, 10vh) scale(0.9); }
+}
+
+.bg-pattern {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  background-color: var(--background-warm);
+  background-image: 
+    url("https://www.transparenttextures.com/patterns/natural-paper.png");
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(40, 54, 24, 0.1);
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(40, 54, 24, 0.2);
+}
+
+/* Advanced Transitions */
+.page-enter {
+  opacity: 0;
+  filter: blur(10px);
+}
+
+.page-enter-active {
+  opacity: 1;
+  filter: blur(0);
+  transition: opacity 1s, filter 1s;
+}
