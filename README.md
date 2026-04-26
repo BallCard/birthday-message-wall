@@ -4,18 +4,15 @@
 
 一个全栈生日留言墙应用。朋友们的祝福化作卡片飘落在页面上，还可以送虚拟礼物、和桌面宠物互动。
 
+## 在线体验
+
+[https://8tspyt5ntp.coze.site](https://8tspyt5ntp.coze.site)
+
 ## 预览
 
-<table>
-  <tr>
-    <td align="center"><b>祝福墙主页</b></td>
-    <td align="center"><b>写祝福</b></td>
-  </tr>
-  <tr>
-    <td><img src="docs/screenshots/01-main.png" width="600"/></td>
-    <td><img src="docs/screenshots/02-form.png" width="600"/></td>
-  </tr>
-</table>
+<p align="center">
+  <img src="docs/screenshots/01-main.png" width="600"/>
+</p>
 
 ## 功能
 
