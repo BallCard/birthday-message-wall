@@ -1,7 +1,9 @@
 # Birthday Wall - Design Spec
 
 Date: 2026-04-24
-Status: Approved
+Status: Approved historical plan; superseded by the delivered React implementation
+
+> This document records the initial plan. The delivered frontend uses React 19 rather than the Vue 3 stack described below. See [Project Story](../../PROJECT_STORY.md) for the implementation history and current source of truth.
 
 ## Overview
 

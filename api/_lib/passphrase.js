@@ -13,7 +13,13 @@ export function verifyPassphrase(req) {
     return { ok: true };
   }
 
-  const secret = process.env.PASSPHRASE_SECRET || 'birthday2024';
+  const secret = process.env.PASSPHRASE_SECRET;
+
+  // Fail closed when protection is enabled but no secret is configured.
+  if (!secret) {
+    console.error('PASSPHRASE_ENABLED is true but PASSPHRASE_SECRET is missing');
+    return { ok: false, status: 500, message: '口令保护尚未正确配置' };
+  }
   const passphrase = req.body?.passphrase;
 
   // Check if passphrase is provided

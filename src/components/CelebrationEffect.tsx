@@ -7,7 +7,7 @@ export interface CelebrationEffectRef {
 const CelebrationEffect = forwardRef<CelebrationEffectRef>((props, ref) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const particles = useRef<any[]>([]);
-  const requestRef = useRef<number>();
+  const requestRef = useRef<number | null>(null);
 
   class Particle {
     x: number;
@@ -150,7 +150,7 @@ const CelebrationEffect = forwardRef<CelebrationEffectRef>((props, ref) => {
     requestRef.current = requestAnimationFrame(animate);
     return () => {
       window.removeEventListener('resize', handleResize);
-      if (requestRef.current) cancelAnimationFrame(requestRef.current);
+      if (requestRef.current !== null) cancelAnimationFrame(requestRef.current);
     };
   }, []);
 
